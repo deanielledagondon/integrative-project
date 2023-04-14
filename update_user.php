@@ -1,17 +1,17 @@
-<?php include 'php/check-update.php'; ?>
+<?php include 'crud/check-update.php'; ?>
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Ecommerce</title>
+    <title>Veridis</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
   </head>
   <body>
     <div class = "container d-flex justify-content-center align-items-center"
     style = "min-height: 100vh"> 
     <form class = "border shadow p-3 rounded"
-    action = "php/check-update.php"
+    action = "crud/check-update.php"
     method = "post"
     style = "width: 500px">
         <h1 class =text-center p-3> UPDATE</h1>

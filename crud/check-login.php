@@ -1,6 +1,6 @@
 <?php
 session_start();
-include "../db_conn.php";
+include "../config.php";
 
 if(isset($_POST['email']) && isset($_POST['pass']) && isset($_POST['role'])) {
     function test_input($data) {
@@ -35,12 +35,12 @@ if(isset($_POST['email']) && isset($_POST['pass']) && isset($_POST['role'])) {
             if($role == 'admin') {
                 header("Location: ../admin_page.php");
             } else {
-                header("Location: ../user_page.php");
+                header("Location: ../header.php");
             }
         } else {
-            header("Location: ../login_page.php?error=Incorrect Email, Password or Role");
+            header("Location: ../login.php?error=Incorrect Email, Password or Role");
         }
     }
 } else {
-    header("Location: ../login_page.php");
+    header("Location: ../login.php");
 }

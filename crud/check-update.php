@@ -1,7 +1,7 @@
 <?php 
 
 if(isset($_GET['id'])){
-    include "db_conn.php";
+    include "config.php";
     
     function validate($data) {
         $data = trim($data);
@@ -21,7 +21,7 @@ if(isset($_GET['id'])){
         header("Location: admin_page.php");
     }
 
-}elseif(isset($_POST['update'])){include "../db_conn.php";
+}elseif(isset($_POST['update'])){include "../config.php";
     function validate($data){
         $data = trim($data);
         $data = stripslashes($data);
@@ -44,7 +44,7 @@ if(isset($_GET['id'])){
                WHERE id=$id ";
        $result = mysqli_query($conn, $sql);
        if ($result) {
-       	  header("Location: ../admin_page.php?success=Successfully Updated");
+       	  header("Location: ../check-update.php?success=Successfully Updated");
        }else {
           header("Location: ../check-update.php?id=$id&error=Unknown Error&$user_data");
        }
@@ -52,5 +52,5 @@ if(isset($_GET['id'])){
 
 }
 else {
-    header("Location: admin_page.php");
+    header("Location: check-update.php");
 }

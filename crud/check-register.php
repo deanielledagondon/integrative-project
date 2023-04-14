@@ -1,6 +1,6 @@
 <?php
 session_start();
-include "../db_conn.php";
+include "../config.php";
 
 if(isset($_POST['name']) && isset($_POST['email']) && isset($_POST['pass']) && isset($_POST['role'])) {
 
@@ -15,25 +15,25 @@ if(isset($_POST['name']) && isset($_POST['email']) && isset($_POST['pass']) && i
     // Validations sa Text Fields
     $name = validate($_POST['name']);
     if (empty($name)) {
-        header("Location: ../register_page.php?error=Name is required");
+        header("Location: ../register.php?error=Name is required");
         exit();
     }
 
     $email = validate($_POST['email']);
     if (empty($email)) {
-        header("Location: ../register_page.php?error=Email is required");
+        header("Location: ../register.php?error=Email is required");
         exit();
     }
 
     $pass = validate($_POST['pass']);
     if (empty($pass)) {
-        header("Location: ../register_page.php?error=Password is required");
+        header("Location: ../register.php?error=Password is required");
         exit();
     }
 
     $role = validate($_POST['role']);
     if (empty($role)) {
-        header("Location: ../register_page.php?error=Role is required");
+        header("Location: ../register.php?error=Role is required");
         exit();
     }
 
@@ -59,13 +59,13 @@ if(isset($_POST['name']) && isset($_POST['email']) && isset($_POST['pass']) && i
         if($role == 'admin') {
             header("Location: ../admin_page.php");
         } else {
-            header("Location: ../user_page.php");
+            header("Location: ../header.php");
         }
     } else {
-        header("Location: ../login_page.php?error=Failed to Register User");
+        header("Location: ../login.php?error=Failed to Register User");
     }
 } else {
-    header("Location: ../login_page.php");
+    header("Location: ../login.php");
 }
 
 ?> 
