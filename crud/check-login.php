@@ -12,7 +12,7 @@ if(isset($_POST['email']) && isset($_POST['password']) && isset($_POST['user_typ
 
     
     $pass = test_input($_POST['password']);
-    $role = test_input($_POST['user_type']);
+    $user_type = test_input($_POST['user_type']);
     $email = test_input($_POST['email']);
     if(empty($email)){
         header("Location: ../login_page.php?error=Email is Required");
@@ -21,7 +21,7 @@ if(isset($_POST['email']) && isset($_POST['password']) && isset($_POST['user_typ
     } elseif((empty($email)) && (empty($password))){
         header("Location: ../login_page.php?error=Failed to Input the Requirements");
     } else {
-        $sql = "SELECT * FROM users WHERE email = '$email' AND pass ='$password' AND role ='$user_type'";
+        $sql = "SELECT * FROM users WHERE email = '$email' AND password ='$pass' AND role ='$user_type'";
         $result = mysqli_query($conn, $sql);
 
         if(mysqli_num_rows($result) === 1) {

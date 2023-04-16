@@ -43,7 +43,7 @@
             <input type="password" 
             class="form-control" 
             id="pass" name = "pass"
-			value = "<?=$row['pass']?>">
+			value = "<?=$row['password']?>">
 
 			<input type="text" 
 		          name="id"

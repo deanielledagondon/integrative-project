@@ -25,7 +25,7 @@ if(isset($_POST['name']) && isset($_POST['email']) && isset($_POST['password']) 
         exit();
     }
 
-    $password = validate($_POST['password']);
+    $pass = validate($_POST['password']);
     if (empty($password)) {
         header("Location: ../register.php?error=Password is required");
         exit();
@@ -48,12 +48,12 @@ if(isset($_POST['name']) && isset($_POST['email']) && isset($_POST['password']) 
 
     $name = mysqli_real_escape_string($conn, $name);
     $email = mysqli_real_escape_string($conn, $email);
-    $password = mysqli_real_escape_string($conn, $password);
+    $pass = mysqli_real_escape_string($conn, $pass);
     $user_type = mysqli_real_escape_string($conn, $user_type);
     $status = mysqli_real_escape_string($conn, $status);
 
     // E Insert ang  data sa database / basic query
-    $sql = "INSERT INTO users (name, email, password, user_type, status) VALUES ('$name','$email', '$password', '$user_type', '$status')";
+    $sql = "INSERT INTO users (name, email, password, user_type, status) VALUES ('$name','$email', '$pass', '$user_type', '$status')";
     $result = mysqli_query($conn, $sql);
 
     if($result) {
