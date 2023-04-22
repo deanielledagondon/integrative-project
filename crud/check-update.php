@@ -18,7 +18,7 @@ if(isset($_GET['id'])){
     if(mysqli_num_rows($result) > 0) {
         $row = mysqli_fetch_assoc($result);
     }else{
-        header("Location: admin_page.php");
+        header("Location: admin_users.php");
     }
 
 }elseif(isset($_POST['update'])){include "../config.php";
@@ -44,7 +44,7 @@ if(isset($_GET['id'])){
                WHERE id=$id ";
        $result = mysqli_query($conn, $sql);
        if ($result) {
-       	  header("Location: ../check-update.php?success=Successfully Updated");
+       	  header("Location: ../admin_users.php?success=Successfully Updated");
        }else {
           header("Location: ../check-update.php?id=$id&error=Unknown Error&$user_data");
        }
