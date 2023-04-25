@@ -48,7 +48,7 @@ if(isset($_GET['delete'])){
 
 <section class="orders">
 
-   <h1 class="title">Placed orders</h1>
+   <h1 class="title">Placed Orders</h1>
 
    <div class="box-container">
       <?php
@@ -64,17 +64,17 @@ if(isset($_GET['delete'])){
          <p> Email: <span><?php echo $fetch_orders['email']; ?></span> </p>
          <p> Address: <span><?php echo $fetch_orders['address']; ?></span> </p>
          <p> Total Products: <span><?php echo $fetch_orders['total_products']; ?></span> </p>
-         <p> Total Price: <span>$<?php echo $fetch_orders['total_price']; ?>/-</span> </p>
+         <p> Total Price: <span>₱<?php echo $fetch_orders['total_price']; ?>/-</span> </p>
          <p> Payment Method: <span><?php echo $fetch_orders['method']; ?></span> </p>
          <form action="" method="post">
             <input type="hidden" name="order_id" value="<?php echo $fetch_orders['id']; ?>">
             <select name="update_payment">
                <option value="" selected disabled><?php echo $fetch_orders['payment_status']; ?></option>
-               <option value="pending">pending</option>
-               <option value="completed">completed</option>
+               <option value="pending">Pending</option>
+               <option value="completed">Completed</option>
             </select>
             <input type="submit" value="update" name="update_order" class="option-btn">
-            <a href="admin_orders.php?delete=<?php echo $fetch_orders['id']; ?>" onclick="return confirm('delete this order?');" class="delete-btn">delete</a>
+            <a href="admin_orders.php?delete=<?php echo $fetch_orders['id']; ?>" onclick="return confirm('Delete this order?');" class="delete-btn">Delete</a>
          </form>
       </div>
       <?php

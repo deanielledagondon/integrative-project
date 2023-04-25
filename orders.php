@@ -56,7 +56,7 @@ if(!isset($user_id)){
          <p> Payment method: <span><?php echo $fetch_orders['method']; ?></span> </p>
          <p> Your orders: <span><?php echo $fetch_orders['total_products']; ?></span> </p>
          <p> Total price: <span>₱<?php echo $fetch_orders['total_price']; ?></span> </p>
-         <p> Payment status: <span style="color:<?php if($fetch_orders['payment_status'] == 'pending'){ echo 'red'; }else{ echo 'green'; } ?>;"><?php echo $fetch_orders['payment_status']; ?></span> </p>
+         <p> Payment status: <span style="color:<?php if($fetch_orders['payment_status'] == 'Pending'){ echo 'red'; }else{ echo 'green'; } ?>;"><?php echo $fetch_orders['payment_status']; ?></span> </p>
          </div>
       <?php
        }
