@@ -52,6 +52,8 @@ if(isset($_GET['delete'])){
          <p> Email: <span><?php echo $fetch_users['email']; ?></span> </p>
          <p> User Type: <span style="color:<?php if($fetch_users['user_type'] == 'admin'){ echo 'var(--orange)'; } ?>"><?php echo $fetch_users['user_type']; ?></span> </p>
          <p> Status: <span style="color:<?php if($fetch_users['status'] == 'enable'){ echo 'var(--green)'; } ?>"><?php echo $fetch_users['status']; ?></span> </p>
+         <a href="disable_user.php?id=<?php echo $fetch_users['id']; ?>" onclick="return confirm('Disable User?');" class="btn btn-primary">Disable User</a>
+         <a href="enable_user.php?id=<?php echo $fetch_users['id']; ?>" onclick="return confirm('Enable User?');" class="btn btn-primary">Enable User</a>
          <a href="update_user.php?id=<?php echo $fetch_users['id']; ?>" onclick="return confirm('Update information?');" class="btn btn-primary">Update user</a>
          <a href="admin_users.php?delete=<?php echo $fetch_users['id']; ?>" onclick="return confirm('Delete this user?');" class="delete-btn">Delete user</a>
       </div>
