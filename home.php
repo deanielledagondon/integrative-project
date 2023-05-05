@@ -52,7 +52,7 @@ if(isset($_POST['add_to_cart'])){
 <section class="home">
    <div class="content">
       <h3>A selection of clothes with just a click.</h3>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, quod? Reiciendis ut porro iste totam.</p>
+      <p>Step into our virtual store and discover a world of possibilities, where quality meets affordability.</p>
       <a href="about.php" class="white-btn">Discover more</a>
    </div>
 
@@ -103,7 +103,7 @@ if(isset($_POST['add_to_cart'])){
 
       <div class="content">
          <h3>About Us</h3>
-         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit quos enim minima ipsa dicta officia corporis ratione saepe sed adipisci?</p>
+         <p>At Veridis, we're passionate about providing you with the latest fashion trends that are both stylish and comfortable. Our team of fashion experts works tirelessly to curate a collection of clothing that is not only affordable but also high-quality. We pride ourselves on providing exceptional customer service, and we are always here to help you find the perfect outfit for any occasion.</p>
          <a href="about.php" class="btn">Read more</a>
       </div>
 
@@ -115,7 +115,6 @@ if(isset($_POST['add_to_cart'])){
 
    <div class="content">
       <h3>Have any questions?</h3>
-      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque cumque exercitationem repellendus, amet ullam voluptatibus?</p>
       <a href="contact.php" class="white-btn">Contact us</a>
    </div>
 

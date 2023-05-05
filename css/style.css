@@ -52,7 +52,6 @@ section{
 .empty{
    padding:1.5rem;
    text-align: center;
-   border:var(--border);
    background-color: var(--white);
    color:var(--red);
    font-size: 2rem;
@@ -102,7 +101,7 @@ section{
 .white-btn{
    display: inline-block;
    margin-top: 1rem;
-   padding:1rem 3rem;
+   padding:1rem 1em;
    cursor: pointer;
    color:var(--white);
    font-size: 1.8rem;
@@ -325,7 +324,7 @@ section{
    box-shadow: var(--box-shadow);
    border:var(--border);
    padding:2rem;
-   text-align: center;
+   text-align: justify;
    width: 30rem;
    display: none;
    animation: fadeIn .2s linear;
@@ -387,12 +386,10 @@ section{
 }
 
 .products .box-container .box{
-   border-radius: .5rem;
    background-color: var(--white);
    box-shadow: var(--box-shadow);
    padding:2rem;
    text-align: center;
-   border:var(--border);
    position: relative;
 }
 
@@ -408,8 +405,8 @@ section{
 
 .products .box-container .box .qty{
    width: 100%;
-   padding:1.2rem 1.4rem;
-   border-radius: .5rem;
+   padding:1.2vw 1.4rem;
+   border-radius: .5pc;
    border:var(--border);
    margin:1rem 0;
    font-size: 2rem;
@@ -500,10 +497,8 @@ section{
 .reviews .box-container .box{
    background-color: var(--white);
    box-shadow: var(--box-shadow);
-   border:var(--border);
-   border-radius: .5rem;
    text-align: center;
-   padding:2rem;
+   padding:2vmax;
 }
 
 .reviews .box-container .box img{
@@ -553,7 +548,6 @@ section{
 .authors .box-container .box{
    position: relative;
    text-align: center;
-   border:var(--border);
    box-shadow: var(--box-shadow);
    overflow: hidden;
    border-radius: .5rem;
@@ -645,11 +639,9 @@ section{
 .shopping-cart .box-container .box{
    text-align: center;
    padding:2rem;
-   border-radius: .5rem;
    background-color: var(--white);
    box-shadow: var(--box-shadow);
    position: relative;
-   border:var(--border);
 }
 
 .shopping-cart .box-container .box .fa-times{
@@ -688,7 +680,7 @@ section{
    margin:.5rem 0;
    border:var(--border);
    border-radius: .5rem;
-   padding:1.2rem 1.4rem;
+   padding:1.2vh 1.4rem;
    font-size: 2rem;
    color:var(--black);
    width: 9rem;
