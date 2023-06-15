@@ -435,13 +435,14 @@ section{
    display: grid;
    grid-template-columns: repeat(auto-fit, 30rem);
    justify-content: center;
-   gap:1.5rem;
+   gap:1.2rem;
    max-width: 1200px;
    margin:0 auto;
    align-items: flex-start;
 }
 
 .users .box-container .box{
+   overflow: scroll;
    background-color: var(--white);
    padding:2rem;
    border:var(--border);
@@ -465,7 +466,7 @@ section{
 }
 
 .users .box-container .box .delete-btn{
-   margin-top: 0;
+   margin-top: 1;
 }
 
 .messages .box-container{
