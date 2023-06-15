@@ -27,6 +27,7 @@ if(isset($_POST['email']) && isset($_POST['password']) && isset($_POST['user_typ
         if(mysqli_num_rows($result) === 1) {
             $row = mysqli_fetch_assoc($result);
 
+           
             $_SESSION['id'] = $row['id'];
             $_SESSION['name'] = $row['name'];
             $_SESSION['email'] = $row['email'];
