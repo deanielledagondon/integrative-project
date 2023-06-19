@@ -45,9 +45,9 @@ if(!isset($user_id)){
       </div>
 
       <div class="content">
-         <h3>why choose us?</h3>
-         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet voluptatibus aut hic molestias, reiciendis natus fuga, cumque excepturi veniam ratione iure. Excepturi fugiat placeat iusto facere id officia assumenda temporibus?</p>
-         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit quos enim minima ipsa dicta officia corporis ratione saepe sed adipisci?</p>
+         <h3>Why choose us?</h3>
+         <p>At Veridis, we believe that fashion is an art form, and we're passionate about helping our customers find unique pieces that allow them to express their individuality. We offer a carefully curated collection of clothing, shoes, and accessories from some of the world's most innovative and exciting designers.</p>
+         <p>Our mission is to provide our customers with high-quality, affordable fashion that is both stylish and sustainable. We pride ourselves on our exceptional customer service, and we're always here to help you find the perfect outfit for any occasion. </p>
          <a href="contact.php" class="btn">Contact us</a>
       </div>
 
@@ -63,7 +63,7 @@ if(!isset($user_id)){
 
       <div class="box">
          <img src="images/pic-1.jpg" alt="">
-         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt ad, quo labore fugiat nam accusamus quia. Ducimus repudiandae dolore placeat.</p>
+         <p>I'm so impressed with the customer service at Veridis. I had a question about sizing, and their support team responded to my email within an hour with helpful advice. I ended up ordering a pair of pants that fit like a dream. I appreciate how easy it was to shop with them, and I'll be a loyal customer from now on.</p>
          <div class="stars">
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
@@ -76,7 +76,7 @@ if(!isset($user_id)){
 
       <div class="box">
          <img src="images/pic-2.jpg" alt="">
-         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt ad, quo labore fugiat nam accusamus quia. Ducimus repudiandae dolore placeat.</p>
+         <p>I recently bought a dress from Veridis, and I couldn't be happier with my purchase. The quality of the fabric is excellent, and the fit is perfect. I received so many compliments on the dress when I wore it to a party. I will definitely be shopping at Veridis again!</p>
          <div class="stars">
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
@@ -89,7 +89,7 @@ if(!isset($user_id)){
 
       <div class="box">
          <img src="images/pic-3.jpg" alt="">
-         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt ad, quo labore fugiat nam accusamus quia. Ducimus repudiandae dolore placeat.</p>
+         <p>I'm always hesitant to buy clothes online, but I took a chance on Veridis, and I'm so glad I did. The clothes are even better than I expected - high-quality, trendy, and affordable. The shipping was fast, and the items were packaged beautifully. I've already placed my second order and can't wait to see what they have in store next!</p>
          <div class="stars">
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>

@@ -10,10 +10,15 @@ if(!isset($admin_id)){
    header('location:login.php');
 }
 
-if(isset($_GET['delete'])){
+if (isset($_GET['delete'])) {
    $delete_id = $_GET['delete'];
    mysqli_query($conn, "DELETE FROM `users` WHERE id = '$delete_id'") or die('query failed');
-   header('location:admin_users.php');
+
+   mysqli_query($conn, "SET @num := 0");
+   mysqli_query($conn, "UPDATE users SET id = @num := (@num+1)");
+   mysqli_query($conn, "ALTER TABLE users AUTO_INCREMENT = 1");
+
+   header('location: admin_users.php');
 }
 
 ?>
@@ -43,7 +48,34 @@ if(isset($_GET['delete'])){
 
    <div class="box-container">
       <?php
-         $select_users = mysqli_query($conn, "SELECT * FROM `users`") or die('query failed');
+         $select_users = mysqli_query($conn, "SELECT * FROM `users` WHERE `user_type` = 'user' ") or die('query failed');
+         while($fetch_users = mysqli_fetch_assoc($select_users)){
+      ?>
+      <div class="box">
+         <p> User ID: <span><?php echo $fetch_users['id'] ; ?></span> </p>
+         <p> Username: <span><?php echo $fetch_users['name']; ?></span> </p>
+         <p> Email: <span><?php echo $fetch_users['email']; ?></span> </p>
+         <p> User Type: <span style="color:<?php if($fetch_users['user_type'] == 'admin'){ echo 'var(--orange)'; } ?>"><?php echo $fetch_users['user_type']; ?></span> </p>
+         <p> Status: <span style="color:<?php if($fetch_users['status'] == 'enable'){ echo 'var(--green)'; } ?>"><?php echo $fetch_users['status']; ?></span> </p>
+         <a href="disable_user.php?id=<?php echo $fetch_users['id']; ?>" onclick="return confirm('Disable User?');" class="btn btn-primary">Disable User</a>
+         <a href="enable_user.php?id=<?php echo $fetch_users['id']; ?>" onclick="return confirm('Enable User?');" class="btn btn-primary">Enable User</a>
+         <a href="update_user.php?id=<?php echo $fetch_users['id']; ?>" onclick="return confirm('Update information?');" class="btn btn-primary">Update user</a>
+         <a href="admin_users.php?delete=<?php echo $fetch_users['id']; ?>" onclick="return confirm('Delete this user?');" class="delete-btn">Delete user</a>
+      </div>
+      <?php
+         };
+      ?>
+   </div>
+
+</section>
+
+<section class="users">
+
+   <h1 class="title"> admin accounts </h1>
+
+   <div class="box-container">
+      <?php
+         $select_users = mysqli_query($conn, "SELECT * FROM `users` WHERE `user_type` = 'admin' ") or die('query failed');
          while($fetch_users = mysqli_fetch_assoc($select_users)){
       ?>
       <div class="box">

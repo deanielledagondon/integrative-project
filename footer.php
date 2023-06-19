@@ -36,6 +36,6 @@
 
    </div>
 
-   <p class="credit"> &copy; for school project purposes only <?php echo date('Y'); ?> by <span>mr. web designer</span> </p>
+   <p class="credit"> &copy; Veridis <?php echo date('Y'); ?> All rights reserved. </p>
 
 </section>

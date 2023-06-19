@@ -50,11 +50,8 @@ if (mysqli_num_rows($result) > 0) {
         echo "<td>" . $row["status"] . "</td>";
         $status = $row["status"];
         $user_id = $row["id"];
-        if ($status == 1) {
-            echo "<td><a href = 'enable_user.php?id=" . $row["id"] . "'> <button>Activated</button></a>";
-        } elseif ($status == 0) {
-            echo "<td><a href = 'disable_user.php?id=" . $row["id"] . "'> <button>Disabled</button></a>";
-        }
+        echo "<td><a href = 'enable_user.php?id=" . $row["id"] . "'> <button>Activated</button></a>";
+        echo "<td><a href = 'disable_user.php?id=" . $row["id"] . "'> <button>Disabled</button></a>";
         echo "<td><a href='update_user.php?id=" . $row["id"] . "'><button>Update</button</a></td>";
         echo "<td><a href='php/check-delete.php?id=" . $row["id"] . "'><button>Delete</button></a></td>";
 

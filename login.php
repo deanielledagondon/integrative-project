@@ -3,37 +3,39 @@
 include 'config.php';
 session_start();
 
-if(isset($_POST['submit'])){
+$message = array(); 
 
+if(isset($_POST['submit'])){
    $email = mysqli_real_escape_string($conn, $_POST['email']);
    $pass = mysqli_real_escape_string($conn, md5($_POST['password']));
 
    $select_users = mysqli_query($conn, "SELECT * FROM `users` WHERE email = '$email' AND password = '$pass'") or die('query failed');
 
-   if(mysqli_num_rows($select_users) > 0){
-
+   if(mysqli_num_rows($select_users) === 1){
       $row = mysqli_fetch_assoc($select_users);
 
-      if($row['user_type'] == 'admin'){
-
-         $_SESSION['admin_name'] = $row['name'];
-         $_SESSION['admin_email'] = $row['email'];
-         $_SESSION['admin_id'] = $row['id'];
-         header('location:admin_page.php');
-
-      }elseif($row['user_type'] == 'user'){
-
+      if ($row['status'] == 'activated') {
+         $_SESSION['user_id'] = $row['id'];
          $_SESSION['user_name'] = $row['name'];
          $_SESSION['user_email'] = $row['email'];
-         $_SESSION['user_id'] = $row['id'];
-         header('location:home.php');
+         $_SESSION['user_type'] = $row['user_type'];
 
+         if($row['user_type'] == 'admin'){
+            $_SESSION['admin_name'] = $row['name'];
+            $_SESSION['admin_email'] = $row['email'];
+            $_SESSION['admin_id'] = $row['id'];
+            header('Location: admin_page.php');
+            exit(); 
+         } elseif($row['user_type'] == 'user'){
+            header('Location: home.php');
+            exit(); 
+         }
+      } else {
+         $message[] = "The user is disabled, contact the admin to enable it back";
       }
-
-   }else{
+   } else {
       $message[] = 'Incorrect email or password!';
    }
-
 }
 
 ?>
@@ -52,15 +54,18 @@ if(isset($_POST['submit'])){
    <!-- custom css file link  -->
    <link rel="stylesheet" href="css/style.css">
 
+
 </head>
 <body>
 
+      
+
 <?php
 if(isset($message)){
-   foreach($message as $message){
+   foreach($message as $msg){
       echo '
       <div class="message">
-         <span>'.$message.'</span>
+         <span>'.$msg.'</span>
          <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
       </div>
       ';

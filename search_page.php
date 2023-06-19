@@ -56,7 +56,7 @@ if(isset($_POST['add_to_cart'])){
 
 <section class="search-form">
    <form action="" method="post">
-      <input type="text" name="search" placeholder="Search products..." class="box">
+      <input type="text" name="search" placeholder="Search products" class="box">
       <input type="submit" name="submit" value="search" class="btn">
    </form>
 </section>
@@ -87,7 +87,7 @@ if(isset($_POST['add_to_cart'])){
             echo '<p class="empty">No result found!</p>';
          }
       }else{
-         echo '<p class="empty">Search something else</p>';
+         echo '<p class="empty">Search something else!</p>';
       }
    ?>
    </div>

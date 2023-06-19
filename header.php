@@ -21,7 +21,7 @@ if(isset($message)){
             <a href="#" class="fab fa-instagram"></a>
             <a href="#" class="fab fa-linkedin"></a>
          </div>
-         <p> <a href="login.php">Login</a> | <a href="register.php">Register</a> </p>
+   
       </div>
    </div>
 
