@@ -15,8 +15,8 @@ if (isset($_GET['delete'])) {
    mysqli_query($conn, "DELETE FROM `users` WHERE id = '$delete_id'") or die('query failed');
 
    mysqli_query($conn, "SET @num := 0");
-   mysqli_query($conn, "UPDATE users SET id = @num := (@num+1)");
-   mysqli_query($conn, "ALTER TABLE users AUTO_INCREMENT = 1");
+   mysqli_query($conn, "UPDATE `users` SET id = @num := (@num+1)");
+   mysqli_query($conn, "ALTER TABLE `users` AUTO_INCREMENT = 1");
 
    header('location: admin_users.php');
 }
@@ -87,7 +87,7 @@ if (isset($_GET['delete'])) {
          <a href="disable_user.php?id=<?php echo $fetch_users['id']; ?>" onclick="return confirm('Disable User?');" class="btn btn-primary">Disable User</a>
          <a href="enable_user.php?id=<?php echo $fetch_users['id']; ?>" onclick="return confirm('Enable User?');" class="btn btn-primary">Enable User</a>
          <a href="update_user.php?id=<?php echo $fetch_users['id']; ?>" onclick="return confirm('Update information?');" class="btn btn-primary">Update user</a>
-         <br><br>
+    
          <a href="admin_users.php?delete=<?php echo $fetch_users['id']; ?>" onclick="return confirm('Delete this user?');" class="delete-btn">Delete user</a>
       </div>
       <?php

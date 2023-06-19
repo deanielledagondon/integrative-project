@@ -49,7 +49,7 @@ if(isset($message)){
          </div>
 
          <div class="user-box">
-            <p> Username: <span><?php echo $_SESSION['user_name']; ?></span></p>
+            <p> Name: <span><?php echo $_SESSION['user_name']; ?></span></p>
             <p> Email: <span><?php echo $_SESSION['user_email']; ?></span></p>
             <a href="logout.php" class="delete-btn">Logout</a>
          </div>

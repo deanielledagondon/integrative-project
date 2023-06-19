@@ -103,7 +103,7 @@ if(isset($_POST['order_btn'])){
       <div class="flex">
          <div class="inputBox">
             <span>Your name:</span>
-            <input type="text" name="name" required placeholder="Enter your name">
+            <input type="text" value = <?php echo $_SESSION['user_name']; ?> disabled = "disabled">
          </div>
          <div class="inputBox">
             <span>Your number :</span>
@@ -111,7 +111,7 @@ if(isset($_POST['order_btn'])){
          </div>
          <div class="inputBox">
             <span>Your email :</span>
-            <input type="email" name="email" required placeholder="Enter your email">
+            <input type="email" value = <?php echo $_SESSION['user_email']; ?> disabled= "disabled">
          </div>
          <div class="inputBox">
             <span>Payment method :</span>

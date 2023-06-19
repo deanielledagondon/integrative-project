@@ -9,6 +9,8 @@ if(isset($_POST['submit'])){
    $pass = mysqli_real_escape_string($conn, md5($_POST['password']));
    $cpass = mysqli_real_escape_string($conn, md5($_POST['cpassword']));
    $user_type = $_POST['user_type'];
+   
+
 
    $select_users = mysqli_query($conn, "SELECT * FROM `users` WHERE email = '$email' AND password = '$pass'") or die('query failed');
 
@@ -19,6 +21,10 @@ if(isset($_POST['submit'])){
          $message[] = 'Confirm password not matched!';
       }else{
          mysqli_query($conn, "INSERT INTO `users`(name, email, password, user_type) VALUES('$name', '$email', '$cpass', '$user_type')") or die('query failed');
+         mysqli_query($conn, "SET @num := 0");  
+         mysqli_query($conn, "UPDATE `users` SET id = @num := (@num+1)");
+         mysqli_query($conn, "ALTER TABLE `users` AUTO_INCREMENT = 1");
+   
          $message[] = 'Registered successfully!';
          header('location:login.php');
       }
